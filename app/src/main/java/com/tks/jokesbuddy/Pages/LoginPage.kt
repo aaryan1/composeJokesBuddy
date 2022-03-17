@@ -1,6 +1,8 @@
 package com.tks.jokesbuddy.Pages
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -15,12 +17,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tks.jokesbuddy.R
+import com.tks.jokesbuddy.showToast
 import com.tks.jokesbuddy.ui.theme.*
 import androidx.compose.material.Text as Text
 
@@ -48,7 +56,7 @@ import androidx.compose.material.Text as Text
 }
    @Composable fun welcomeText()
    {
-      Text(text = "Welcome", color = Color.White, fontSize = 25.sp, modifier = Modifier.padding(top = 40.dp))
+      Text(text = stringResource(id = R.string.str_welcome), color = Color.White, fontSize = 25.sp, modifier = Modifier.padding(top = 40.dp))
    }
 
 @Composable fun purposeImage(){
@@ -61,8 +69,8 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
 
    TextField(value = TextFieldEmailState.value,
       onValueChange = { newInput -> TextFieldEmailState.value = newInput },
-      leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = "email")},
-      label = {Text(text = "E-mail address",color = MaterialTheme.colors.TextFieldTextColor)},
+      leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_email_24), contentDescription = "email")},
+      label = {Text(text = stringResource(id = R.string.str_email),color = MaterialTheme.colors.TextFieldTextColor)},
       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
       modifier = Modifier
          .padding(top = 25.dp)
@@ -71,27 +79,46 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
    var TextFieldPasswordState = remember{mutableStateOf("")}
    TextField(value = TextFieldPasswordState.value,
       onValueChange = { newInput -> TextFieldPasswordState.value = newInput },
-      leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = "password")},
-      label = {Text(text = "Password",color = MaterialTheme.colors.TextFieldTextColor)},
+      leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_email_24), contentDescription = "password")},
+      label = {Text(text = stringResource(id = R.string.str_password),color = MaterialTheme.colors.TextFieldTextColor)},
+      visualTransformation = PasswordVisualTransformation(),
       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
       modifier = Modifier
          .padding(top = 25.dp)
          .background(color = MaterialTheme.colors.TextFieldColor)
    )
+
+   var result = "incorrect"
+   var textColor = Color.Red
+   if (TextFieldPasswordState.value == "secret"){
+      result = "correct"
+      textColor = Color.White
+   }
+
+   Text(
+      text = "Password : $result",
+      fontSize = 22.sp,
+      color = textColor,
+      fontFamily = FontFamily.SansSerif,
+      fontStyle = FontStyle.Italic,
+      modifier = Modifier.padding(top = 25.dp)
+   )
 }
 @Composable
 fun SignIn(){
-   Button(onClick = {},modifier = Modifier
+   val context= LocalContext.current;
+   Button(onClick = { showToast(context = context, msg = "Login")},modifier = Modifier
       .padding(top = 25.dp)
       .requiredWidth(277.dp)){
-      Text(text = "Sign In")
+      Text(text = stringResource(id = R.string.str_login))
    }
 }
 @Composable
 fun ForgotPasswordText(){
-   Text(text = "Forgot Password ?",color = MaterialTheme.colors.TextFieldTextColor,
+   Text(text = stringResource(id = R.string.str_forgot_password),color = MaterialTheme.colors.TextFieldTextColor,
       modifier = Modifier.padding(top = 70.dp))
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
@@ -99,7 +126,3 @@ fun DefaultPreview() {
       LoginPage()
    }
 }
-
-
-
-

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">JokesBuddy</string>
+    <string name="str_welcome">Welcome</string>
+    <string name="str_login">Login</string>
+    <string name="str_email">E-mail address</string>
+    <string name="str_password">Password</string>
+    <string name="str_login_successfully"></string>
+    <string name="str_login_failed">Login failed! Please try again. </string>
+    <string name="str_forgot_password">Forgot password?</string>
 </resources>
