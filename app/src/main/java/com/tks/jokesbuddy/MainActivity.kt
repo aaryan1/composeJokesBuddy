@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.tks.jokesbuddy.Pages.LoginPage
+import com.tks.jokesbuddy.Pages.MobilePage
 import com.tks.jokesbuddy.ui.theme.JokesBuddyTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,6 +26,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //Greeting("Android")
                     LoginPage()
+                    //MobilePage()
                 }
             }
         }

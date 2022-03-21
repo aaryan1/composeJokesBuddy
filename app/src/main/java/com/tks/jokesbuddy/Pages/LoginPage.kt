@@ -27,6 +27,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tks.jokesbuddy.Extensions.ShowToast
 import com.tks.jokesbuddy.R
 import com.tks.jokesbuddy.showToast
 import com.tks.jokesbuddy.ui.theme.*
@@ -107,7 +108,7 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
 @Composable
 fun SignIn(){
    val context= LocalContext.current;
-   Button(onClick = { showToast(context = context, msg = "Login")},modifier = Modifier
+   Button(onClick = { "Login".ShowToast(context)},modifier = Modifier
       .padding(top = 25.dp)
       .requiredWidth(277.dp)){
       Text(text = stringResource(id = R.string.str_login))
