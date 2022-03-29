@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "366829475188",
+    "project_id": "jokesbuddy-f0f99",
+    "storage_bucket": "jokesbuddy-f0f99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366829475188:android:3cfded798e411c8050c821",
+        "android_client_info": {
+          "package_name": "com.tks.jokesbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366829475188-926nojcu38066n4tbhjoe0iq2vetm892.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCowqI4eJT0U6h1_VuPoEBvWVzCWKCmAWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366829475188-926nojcu38066n4tbhjoe0iq2vetm892.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
