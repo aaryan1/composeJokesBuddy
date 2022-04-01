@@ -1,10 +1,5 @@
 package com.tks.jokesbuddy.Pages
 
-import android.content.Context
-import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -29,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tks.jokesbuddy.Extensions.ShowToast
 import com.tks.jokesbuddy.R
-import com.tks.jokesbuddy.showToast
 import com.tks.jokesbuddy.ui.theme.*
 import androidx.compose.material.Text as Text
 
@@ -66,10 +60,10 @@ import androidx.compose.material.Text as Text
 }
 @Composable
 fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter){
-   var TextFieldEmailState = remember{mutableStateOf("")}
+   var textFieldEmailState = remember{mutableStateOf("")}
 
-   TextField(value = TextFieldEmailState.value,
-      onValueChange = { newInput -> TextFieldEmailState.value = newInput },
+   TextField(value = textFieldEmailState.value,
+      onValueChange = { newInput -> textFieldEmailState.value = newInput },
       leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_email_24), contentDescription = "email")},
       label = {Text(text = stringResource(id = R.string.str_email),color = MaterialTheme.colors.TextFieldTextColor)},
       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -77,9 +71,9 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
          .padding(top = 25.dp)
          .background(color = MaterialTheme.colors.TextFieldColor)
    )
-   var TextFieldPasswordState = remember{mutableStateOf("")}
-   TextField(value = TextFieldPasswordState.value,
-      onValueChange = { newInput -> TextFieldPasswordState.value = newInput },
+   var textFieldPasswordState = remember{mutableStateOf("")}
+   TextField(value = textFieldPasswordState.value,
+      onValueChange = { newInput -> textFieldPasswordState.value = newInput },
       leadingIcon = {Image(painter = painterResource(id = R.drawable.ic_email_24), contentDescription = "password")},
       label = {Text(text = stringResource(id = R.string.str_password),color = MaterialTheme.colors.TextFieldTextColor)},
       visualTransformation = PasswordVisualTransformation(),
@@ -89,9 +83,9 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
          .background(color = MaterialTheme.colors.TextFieldColor)
    )
 
-   var result = "incorrect"
+  /* var result = "incorrect"
    var textColor = Color.Red
-   if (TextFieldPasswordState.value == "secret"){
+   if (textFieldPasswordState.value == "secret"){
       result = "correct"
       textColor = Color.White
    }
@@ -103,7 +97,8 @@ fun text_field(InputType : KeyboardType,placeholder : String,IconImage : Painter
       fontFamily = FontFamily.SansSerif,
       fontStyle = FontStyle.Italic,
       modifier = Modifier.padding(top = 25.dp)
-   )
+   )*/
+
 }
 @Composable
 fun SignIn(){
