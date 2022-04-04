@@ -22,13 +22,14 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.tks.jokesbuddy.Extensions.ShowToast
 import com.tks.jokesbuddy.R
 import com.tks.jokesbuddy.ui.theme.*
 import androidx.compose.material.Text as Text
 
 
-@Composable fun LoginPage() {
+@Composable fun LoginPage(navController: NavController) {
 
    Surface(
       modifier = androidx.compose.ui.Modifier.fillMaxSize(),
@@ -119,6 +120,6 @@ fun ForgotPasswordText(){
 @Composable
 fun DefaultPreview() {
    JokesBuddyTheme {
-      LoginPage()
+      //LoginPage()
    }
 }

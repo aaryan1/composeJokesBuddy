@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
@@ -30,7 +31,7 @@ import com.tks.jokesbuddy.ui.theme.TextFieldColor
 import java.util.concurrent.TimeUnit
 
 @Composable
-fun MobilePage()
+fun MobilePage(navController: NavController)
 {
     Surface(modifier = androidx.compose.ui.Modifier.fillMaxSize(), color = colors.BackgroundColor) {
 

@@ -9,12 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.tks.jokesbuddy.ui.theme.BackgroundColor
 import org.intellij.lang.annotations.JdkConstants
 
 
 @Composable
-fun profilePage()
+fun profilePage(navController: NavController)
 {
       Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.BackgroundColor) {
 
@@ -29,5 +30,5 @@ fun profilePage()
 @Composable
 fun profilePage_Preview()
 {
-    profilePage()
+   // profilePage()
 }
